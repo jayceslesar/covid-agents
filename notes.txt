@@ -1,0 +1,48 @@
+meeting link: https://uvmcom.zoom.us/j/98555620543?from=addon
+
+Wed Sept 15th:
+---
+
+    - location of agents
+    - paramterize different params
+    - evaluate risk of non-vaccinated
+
+    Overall:
+        - run different simuations of sources and sinks and make sense of that data
+            to see hot zones in a room
+
+        - weird source/sink locations
+
+        - different combinations
+            2 source 2 sink
+
+        - locations of infectious people
+            one on each corner
+
+        - try breaking it
+
+        - multiple infectious individuals
+
+    In order:
+        - locations of source/sink
+        - numbers of source/sink
+        - who is infectious (one in each corner, one in middle)
+        - map areas of risk --> normalize on worst case scenario (highest viral load across all experiments)
+        - publishable figures
+
+
+Wed Sept 22nd:
+---
+
+    - document sim_params.json in README.md
+    - TODO make sure all sim_params.json can take multiple in room.py and simulation
+    - where did numbers come from --> citations also in README.md
+    - explain how the model works in README.md
+    - mention easy parameters to control and how to change and run the simulation
+    - how do we do time? --> into minutes
+
+    - start trying to breaking this, values that dont work
+
+    - define risk?? For given paramaters in sim_params.json
+
+    - come up with source/sink locations drawing --> ask John
