@@ -79,7 +79,7 @@ class Room:
 
         # other initializers
         self.iterations = self.sim_params['ITERATIONS']
-        print(self.iterations)
+        print(f'Simulation will run for {self.iterations} steps.')
         self.steps_taken = 0
         # 2 for simple, 8 old
         self.time_length = 1
@@ -130,7 +130,6 @@ class Room:
                         a = Agent.Agent(self.n, i, j, self.seed, production_rate, self.sim_params)
                         a.infectious = True
                         self.initial_agent = a
-                        print(a.production_rate)
                         row.append(Cell.Cell(i, j, self.sim_params, a))
                     else:
                         row.append(Cell.Cell(i, j, self.sim_params))
