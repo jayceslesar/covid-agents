@@ -6,12 +6,10 @@ Authors: Jayce Slesar, Brandon Lee, and Carter Ward
 Advisors: Jason H. T. Bates, John P. Hanley, and Vitor Mori 
 Affiliation: University of Vermont.
 
+This model was created to simulate the risk of infection to a disease primarily transmitted through aerosols of susceptible individuals in a classroom or office. The model is based on the physics of diffusion and hydraulics and is highly parameterizable allowing for users to tailor simulations.
 A heavily paramaterizeable physics simulation to show how aersols spread within enviroments like offices and classrooms
 
-One individual is 'infected' and releases infected aerosols into the room. Using diffusion the model determines where the 'infected' aerosols \
-move to.
-
-Example of 3 different simulations:
+Example output of 3 different simulations (each of these simulations can be recreated using the following json files A: "Jayce add file name"; B: "Jayce add file name"; C: "Jayce add file name") :
 
 ![Exaple](assets/blanket.png)
 
@@ -57,11 +55,11 @@ Use of virtual environment is recommended \
 
 Running `main.py` with a configuration of `sim_params.json` will run the model.
 Upon running, it will ask if you would like to save the data into a directory. Screenshots can be saved to create a .gif of the model run. \
-A visual will appear to show what is happening currently during the simulation. Darker blue means more 'infected' aerosol.
+A visual will appear to show the current state of the simulation. Darker blue means a greater concentration of an aerosol that contains an infectious agent (e.g., SARS-CoV-2).
 
 # General Usage:
 
-Easy paramaters to change include source and sink locations, the size of the grid, who is infected, and how effective masks are. \
+Users will generally want to simulate an environment that most resembles a room that they plan on working and/or teaching in. Therefore, users should familiarize themselves with the parameters listed above so that the simulation most closely resembles the system they choose to model. \
 The data output into the `data` folder is a csv where each row is a different cell with an agent at a timestep. Blank spaces are excluded so it is easier to analyze how much total infected aerosol a given agent as inhaled.
 
 # References:
