@@ -1,6 +1,10 @@
 # Agent Based Covid Model
-Created by Jayce Slesar, Brandon Lee, Carter Ward under the guidance of Jason Bates, John Hanley, Vitor Mori at the University of Vermont.
-Last Updated October 12th, 2021
+Created: February 1, 2021
+Last Updated: October 13, 2021
+
+Authors: Jayce Slesar, Brandon Lee, and Carter Ward
+Advisors: Jason H. T. Bates, John P. Hanley, and Vitor Mori 
+Affiliation: University of Vermont.
 
 A heavily paramaterizeable physics simulation to show how aersols spread within enviroments like offices and classrooms
 
