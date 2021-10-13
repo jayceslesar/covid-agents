@@ -1,10 +1,10 @@
 # Agent Based Covid Model
-Created: February 1, 2021 \
-Last Updated: October 13, 2021 \
+Created: February 1, 2021 \n
+Last Updated: October 13, 2021 \n
 
-Authors: Jayce Slesar, Brandon Lee, and Carter Ward \
-Advisors: Jason H. T. Bates, John P. Hanley, and Vitor Mori \ 
-Affiliation: University of Vermont. \
+Authors: Jayce Slesar, Brandon Lee, and Carter Ward \n
+Advisors: Jason H. T. Bates, John P. Hanley, and Vitor Mori \n 
+Affiliation: University of Vermont. \n
 
 This model was created to simulate the risk of infection to a disease primarily transmitted through aerosols of susceptible individuals in a classroom or office. The model is based on the physics of diffusion and hydraulics and is highly parameterizable allowing for users to tailor simulations.
 A heavily paramaterizeable physics simulation to show how aersols spread within enviroments like offices and classrooms
