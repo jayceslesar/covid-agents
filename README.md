@@ -54,7 +54,7 @@ Use of virtual environment is recommended \
 # How to Run:
 
 Running `main.py` with a configuration of `sim_params.json` will run the model.
-Upon running, it will ask if you would like to save the data into a directory. Screenshots can be saved to create a .gif of the model run. \
+Upon running, it will ask if you would like to save the data into a directory. Screenshots can be saved to create a .gif of the model run (state how screenshots can be saved). \
 A visual will appear to show the current state of the simulation. Darker blue means a greater concentration of an aerosol that contains an infectious agent (e.g., SARS-CoV-2).
 
 # General Usage:
