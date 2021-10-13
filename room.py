@@ -82,7 +82,7 @@ class Room:
         print(f'Simulation will run for {self.iterations} steps.')
         self.steps_taken = 0
         # 2 for simple, 8 old
-        self.time_length = 1
+        self.time_length = 1  # 1 is a second....
         self.grid = []
         self.ideal_mass = 0.0
         self.actual_mass = 0.0
