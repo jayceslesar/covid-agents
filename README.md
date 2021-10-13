@@ -6,6 +6,10 @@ A heavily paramaterizeable physics simulation to show how aersols spread within 
 One individual is 'infected' and releases infected aerosols into the room. Using diffusion the model determines where the 'infected' aerosols \
 move to.
 
+Example of 3 different simulations:
+
+![Exaple](assets/blanket.png)
+
 ## Parameters: (found in sim_params.json) with units
 ### IMPORTANT: The self.time_length variable in room.py controls the time step. Keeping it at 1 means that each step is 1 second.
 - seed: the number to choose the seed for random variables in a simulation
