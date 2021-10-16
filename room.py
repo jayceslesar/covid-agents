@@ -295,24 +295,24 @@ class Room:
         Returns:
             list: list of tuples of coordinates for grid
         """
-        if i == 0 and j == 0:
-            return [(i + 1, j), (i, j + 1)]
-        if i == 0 and j == self.num_cols:
-            return [(i + 1, j), (i, j - 1)]
-        if i == self.num_rows and j == 0:
-            return [(i - 1, j), (i, j + 1)]
-        if i == self.num_rows and j == self.num_cols:
-            return [(i - 1, j), (i, j - 1)]
-        if i == 0:
-            return [(i, j - 1), (i, j + 1), (i + 1, j)]
-        if i == self.num_rows:
-            return [(i, j - 1), (i, j + 1), (i - 1, j)]
-        if j == 0:
-            return [(i - 1, j), (i + 1, j), (i, j + 1)]
-        if j == self.num_cols:
-            return [(i - 1, j), (i + 1, j), (i, j - 1)]
-
-        return [(i, j - 1), (i, j + 1), (i + 1, j), (i - 1, j)]
+        if i == 0  and j == 0:
+            return [(i, j+1), (i+1, j)]
+        elif i == 0 and j == self.cols - 1:
+            return [(i, j-1), (i+1, j)]
+        elif i == self.rows - 1 and j == 0:
+            return [(i-1, j), (i, j+1)]
+        elif i == self.rows - 1 and j == self.cols - 1:
+            return [(i, j-1), (1-1, j)]
+        elif i == 0:
+            return [(i+1, j), (i, j-1), (i, j+1)]
+        elif i == self.rows - 1:
+            return [(i-1, j), (i, j-1), (i, j+1)]
+        elif j == 0:
+            return [(i, j+1), (i-1, j), (i+1, j)]
+        elif j == self.cols - 1:
+            return [(i, j-1), (i-1, j), (i+1, j)]
+        else:
+            return [(i, j-1), (i, j+1), (i+1, j), (i-1, j)]
 
     def efficient_spread(self):
         """ Linear algorithm for calculating flux across grid
