@@ -278,6 +278,7 @@ class Room:
         self.data_dict["source_col"].append(self.sim_params["SOURCE_COL"])
 
     def write_data(self, df_name):
+        os.makedirs('data', exist_ok=True)
         final_df = pd.DataFrame(self.data_dict)
         final_df.to_csv(os.path.join("data", df_name+".csv"))
 
@@ -297,19 +298,19 @@ class Room:
         """
         if i == 0  and j == 0:
             return [(i, j+1), (i+1, j)]
-        elif i == 0 and j == self.cols - 1:
+        elif i == 0 and j == self.num_cols - 1:
             return [(i, j-1), (i+1, j)]
-        elif i == self.rows - 1 and j == 0:
+        elif i == self.num_rows - 1 and j == 0:
             return [(i-1, j), (i, j+1)]
-        elif i == self.rows - 1 and j == self.cols - 1:
+        elif i == self.num_rows - 1 and j == self.num_cols - 1:
             return [(i, j-1), (1-1, j)]
         elif i == 0:
             return [(i+1, j), (i, j-1), (i, j+1)]
-        elif i == self.rows - 1:
+        elif i == self.num_rows - 1:
             return [(i-1, j), (i, j-1), (i, j+1)]
         elif j == 0:
             return [(i, j+1), (i-1, j), (i+1, j)]
-        elif j == self.cols - 1:
+        elif j == self.num_cols - 1:
             return [(i, j-1), (i-1, j), (i+1, j)]
         else:
             return [(i, j-1), (i, j+1), (i+1, j), (i-1, j)]

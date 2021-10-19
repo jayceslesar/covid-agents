@@ -3,7 +3,7 @@ Created: February 1, 2021 \n
 Last Updated: October 13, 2021 \n
 
 Authors: Jayce Slesar, Brandon Lee, and Carter Ward \n
-Advisors: Jason H. T. Bates, John P. Hanley, and Vitor Mori \n 
+Advisors: Jason H. T. Bates, John P. Hanley, and Vitor Mori \n
 Affiliation: University of Vermont. \n
 
 This model was created to simulate the risk of infection to a disease primarily transmitted through aerosols of susceptible individuals in a classroom or office. The model is based on the physics of diffusion and hydraulics and is highly parameterizable allowing for users to tailor simulations.
@@ -15,32 +15,40 @@ Example output of 3 different simulations (each of these simulations can be recr
 
 ## Parameters: (found in sim_params.json) with units
 ### IMPORTANT: The self.time_length variable in room.py controls the time step. Keeping it at 1 means that each step is 1 second.
-- seed: the number to choose the seed for random variables in a simulation
-- rows_people: the number of rows for the simulation (should be odd)
-- cols_people: the number of cols for the simulation (should be odd)
-- have_teacher: boolean value for if there is a teacher in the room (is at the front)
-- moving_agent: boolean value to introduce a moving agent into the simulation
-- iterations: the number of steps to take (each iteration/setp is a second if step_size is set to one)
-- fan_cycles: a paramater to control the fan animation
-- window_height: size paramater for the simulation visualization
-- window_width: size paramater for the simulation visualization
-- source_row: the row that the source is in
-- source_col: the column that the source is in (produces air into the system -- the fan)
-- source_ach: the air changes per hour of the source
-- sink_row: the row that the sink is in
-- snk_col: the column that the sink is in (takes in and evacuates air at a rate)
-- sink_ach: the air changes per hour of the sink
-- mic: boolean valuue if the teacher has a microphone or not (cuts production rate in half if true)
-- inhale_mask_factor: the starting rate/fraction of inhaling given an agent has a mask
-- exhale_mask_factor: rate/fraction of exhalation given a mask (N95 masks reduce outtake by 95% and so on...)
-- breathe_volume: volume breathed in --> (concentration*.0005 cubic meters)*.233 seconds
-- aerosol_mass: mass in mols per aerosol (kg)
-- agent_volume: volume the agent takes up in the respective cell (cubic meters)
-- cell_width: width of the cell (m)
-- cell_height: height of the cell (m)
-- diffusivity: rate of diffusion (meters squared/second)
-- micro_current_factor: how much micro currents affect diffusivity
-- color_upper_limit: cap for the color of a cell (colored by how much infected aerosol is inside)
+
+| Parameter | Description | Data Type | Default |
+| -------- | -----------| ------------| ------- |
+| seed | number to seed the simulation with | integer | 42 |
+| rows_people | number of rows in the grid | integer | 5 |
+| cols_people | number of columns in the grid | integer | 5 |
+| have_teacher | will the simulation have a teacher | boolean (true, false) | true |
+| moving_agent | will the simulation have a moving agent | boolean (true, false) | false |
+| iterations | the number of steps to run the simulation | integer | 3600 |
+| fan_cycles | controls the fan animation, don't need to mess with this | integer | 4 |
+| window_height | for controlling the size of a cell in the visual, no need to change | integer (pixels) | 800 |
+| window_width | for controlling the size of a cell in the visual, no need to change | integer (pixels) | 800 |
+| source_row | the row that the source is in (the fan which moves air around) | integer | 12 |
+| source_col | the column that the source is in (the fan which moves air around) | integer | 5 |
+| source_ach | the air changes per hour of the source | ACH (air changes / hour) | 3 |
+| sink_row | the row that the sink is in (the sink image that takes in air) | integer | 0 |
+| sink_col | the column that the sink is in (the sink image that takes in air) | integer | 5 |
+| sink_ach | the air changes per hour of the source | ACH (air changes / hour) | 4 |
+| mic | value to set the teacher have a microphone or not, affects how loudly they are speaking and reduces output of aerosol | boolean (true, false) | false |
+| inhale_mask_factor | the affect in terms of % that a mask makes on inhaling for a given agent | float [0, 1] | 1 |
+| exhale_mask_factor | the affect in terms of % that a mask makes on exhaling for a given agent | float [0, 1] | 0.05 |
+| breathe_volume | volume breathed in per step | (concentration*.0005 cubic meters)*seconds | 0.233 |
+| aerosol_mass | mass of a given aerosol | killograms | 5.445427e-20 |
+| agent_volume | how much volume an agent takes up in their cell | cubic meters | 0.062 |
+| cell_width | width of a cell on the grid | meters | 1 |
+| cell_height | height of a cell on the grid | meters | 3 |
+| diffusivity | rate of diffusion | square meters per second | 2.83e-5 |
+| micro_current_factor | interaction term for micro currents on diffusivity | | 1000 |
+| color_upper_limit | limit on cell color for visualization | float | 0.00000000000000000000075 |
+
+
+
+
+
 
 Production rates from https://www.medrxiv.org/content/10.1101/2021.02.07.21251309v2.full.pdf
 
