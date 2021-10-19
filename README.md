@@ -45,14 +45,12 @@ Example output of 3 different simulations (each of these simulations can be recr
 | micro_current_factor | interaction term for micro currents on diffusivity | | 1000 |
 | color_upper_limit | limit on cell color for visualization | float | 0.00000000000000000000075 |
 
-
-
-
-
+An example of a paramater setup can be found in `sim_params.json`. Editing this file will result in a changed simulation.
 
 Production rates from https://www.medrxiv.org/content/10.1101/2021.02.07.21251309v2.full.pdf
 
 # Installation:
+Required: python3 and pip
 
 `$ git clone https://github.com/jayceslesar/covid-agents.git` \
 `$ cd covid-agents` \
@@ -64,6 +62,21 @@ Use of virtual environment is recommended \
 Running `main.py` with a configuration of `sim_params.json` will run the model.
 Upon running, it will ask if you would like to save the data into a directory. Screenshots can be saved to create a .gif of the model run (state how screenshots can be saved). \
 A visual will appear to show the current state of the simulation. Darker blue means a greater concentration of an aerosol that contains an infectious agent (e.g., SARS-CoV-2).
+Ex: `python3 main.py` will run a simulation and show the visual.
+
+lines after questions are where the user (you enters answers) \
+$ python3 main.py \
+pygame 2.0.2 (SDL 2.0.16, Python 3.8.11) \
+Hello from the pygame community. https://www.pygame.org/contribute.html \
+Simulation will run for 3600 steps. \
+What would you like to name the data file? some_data \
+do you want screenshots? \
+y \
+What folder do you want to save your screenshots into? Please specify the path \
+save_screenshots \
+How many steps between screenshots? \
+10
+
 
 # General Usage:
 
