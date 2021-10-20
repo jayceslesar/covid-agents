@@ -93,17 +93,16 @@ Riediker, Michael, and Dai-Hua Tsai. “Estimation of Viral Aerosol Emissions Fr
 
 Ma, Jianxin, Xiao Qi, Haoxuan Chen, Xinyue Li, Zheng Zhang, Haibin Wang, Lingli Sun, et al. “Coronavirus Disease 2019 Patients in Earlier Stages Exhaled Millions of Severe Acute Respiratory Syndrome Coronavirus 2 Per Hour.” Clinical Infectious Diseases 72, no. 10 (May 18, 2021): e652–54. https://doi.org/10.1093/cid/ciaa1283.
 
-
 ## Breath Capacity:
-https://www.bbc.co.uk/bitesize/guides/z3xq6fr/revision/2#:~:text=Tidal%20volume%20(TV)%20is%20the,is%206%20litres%20per%20minute
+“Lung Volumes and Vital Capacity - Cardio-Respiratory System - Eduqas - GCSE Physical Education Revision - Eduqas - BBC Bitesize.” Accessed October 20, 2021. https://www.bbc.co.uk/bitesize/guides/z3xq6fr/revision/2.
 
 ## Breaths per Minute:
-https://www.hopkinsmedicine.org/health/conditions-and-diseases/vital-signs-body-temperature-pulse-rate-respiration-rate-blood-pressure#:~:text=Normal%20respiration%20rates%20for%20an,to%2016%20breaths%20per%20minute
+“Vital Signs (Body Temperature, Pulse Rate, Respiration Rate, Blood Pressure) | Johns Hopkins Medicine.” Accessed October 20, 2021. https://www.hopkinsmedicine.org/health/conditions-and-diseases/vital-signs-body-temperature-pulse-rate-respiration-rate-blood-pressure.
 
 ## Inactivation Rate of COVID-19:
-https://www.reuters.com/article/us-health-coronavirus-study/coronavirus-can-persist-in-air-for-hours-and-on-surfaces-for-days-study-idUSKBN2143QP
+“Coronavirus Can Persist in Air for Hours and on Surfaces for Days: Study | Reuters.” Accessed October 20, 2021. https://www.reuters.com/article/us-health-coronavirus-study/coronavirus-can-persist-in-air-for-hours-and-on-surfaces-for-days-study-idUSKBN2143QP.
 
 ## Aerosol Info:
-https://www.cdc.gov/niosh/topics/aerosols/pdfs/Aerosol_101.pdf
+Baron, Paul. “Generation and Behavior of Airborne Particles (Aerosols),” n.d., 40.
 
 http://web.mit.edu/fluids-modules/www/low_speed_flows/2-7Aerosol.pdf
