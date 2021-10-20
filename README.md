@@ -43,7 +43,7 @@ Example output of 3 different simulations (each of these simulations can be recr
 | cell_height | height of a cell on the grid | meters | 3 |
 | diffusivity | rate of diffusion | square meters per second | 2.83e-5 |
 | micro_current_factor | interaction term for micro currents on diffusivity | | 1000 |
-| color_upper_limit | limit on cell color for visualization | float | 0.00000000000000000000075 |
+| color_upper_limit | limit on cell color for visualization | float | 7.500000e-22 |
 
 An example of a paramater setup can be found in `sim_params.json`. Editing this file will result in a changed simulation.
 
