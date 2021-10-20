@@ -10,7 +10,7 @@ import json
 import time
 
 
-with open('sim_params.json') as f:
+with open('assets/example_a.json') as f:
     sim_params = json.load(f)
 
 SCREEN, CLOCK = None, None
