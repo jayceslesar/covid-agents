@@ -1,15 +1,15 @@
 # Agent Based Covid Model
 Created: February 1, 2021 \
-Last Updated: October 13, 2021 \
+Last Updated: October 13, 2021
 
 Authors: Jayce Slesar, Brandon Lee, and Carter Ward \
 Advisors: Jason H. T. Bates, John P. Hanley, and Vitor Mori \
-Affiliation: University of Vermont. \
+Affiliation: University of Vermont.
 
 This model was created to simulate the risk of infection to a disease primarily transmitted through aerosols of susceptible individuals in a classroom or office. The model is based on the physics of diffusion and hydraulics and is highly parameterizable allowing for users to tailor simulations.
 A heavily paramaterizeable physics simulation to show how aersols spread within enviroments like offices and classrooms
 
-Example output of 3 different simulations (each of these simulations can be recreated using the following json files A: "Jayce add file name"; B: "Jayce add file name"; C: "Jayce add file name") :
+Example output of 3 different simulations (each of these simulations can be recreated using the following json files in place of 'sim_params.json' in main.py, line 12. A: "assets/example_a.json"; B: "assets/example_b.json"; C: "assets/example_c.json") :
 
 ![Exaple](assets/blanket.png)
 

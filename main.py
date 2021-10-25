@@ -9,8 +9,8 @@ import csv
 import json
 import time
 
-
-with open('assets/example_a.json') as f:
+params_to_use = 'sim_params.json'
+with open(params_to_use) as f:
     sim_params = json.load(f)
 
 SCREEN, CLOCK = None, None
