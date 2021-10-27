@@ -138,11 +138,24 @@ class Room:
         self.width = self.grid[0][0].width
 
         # Set sink and source
-        self.grid[sim_params["SOURCE_ROW"]][sim_params["SOURCE_COL"]].source = True
-        self.grid[sim_params["SOURCE_ROW"]][sim_params["SOURCE_COL"]].acr = sim_params["SOURCE_ACH"]/3600 * self.total_volume
+        if sim_params["SOURCE_LOCS"] == []:
+            self.grid[sim_params["SOURCE_ROW"]][sim_params["SOURCE_COL"]].source = True
+            self.grid[sim_params["SOURCE_ROW"]][sim_params["SOURCE_COL"]].acr = sim_params["SOURCE_ACH"]/3600 * self.total_volume
 
-        self.grid[sim_params["SINK_ROW"]][sim_params["SINK_COL"]].sink = True
-        self.grid[sim_params["SINK_ROW"]][sim_params["SINK_COL"]].acr =  sim_params["SINK_ACH"]/3600* self.total_volume
+        else:
+            for src in sim_params["SOURCE_LOCS"]:
+                self.grid[src[0]][src[1]].source = True
+                self.grid[src[0]][src[1]].acr = sim_params["SOURCE_ACH"]/3600 * self.total_volume
+
+        if sim_params["SINK_LOCS"] == []:
+            self.grid[sim_params["SINK_ROW"]][sim_params["SINK_COL"]].sink = True
+            self.grid[sim_params["SINK_ROW"]][sim_params["SINK_COL"]].acr =  sim_params["SINK_ACH"]/3600* self.total_volume
+
+        else:
+            for src in sim_params["SINK_LOCS"]:
+                self.grid[src[0]][src[1]].sink = True
+                self.grid[src[0]][src[1]].acr = sim_params["SINK_ACH"]/3600 * self.total_volume
+
         if self.moving_agent:
             self.grid[0][0].agent = self.agent_to_move
 
