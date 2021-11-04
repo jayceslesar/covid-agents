@@ -128,7 +128,7 @@ class Room:
                         else:
                             production_rate = 30
                         a = Agent.Agent(self.n, i, j, self.seed, production_rate, self.sim_params)
-                        a.infectious = True
+                        a.infectious = False # TODO THIS IS USUALLY FALSE
                         self.initial_agent = a
                         row.append(Cell.Cell(i, j, self.sim_params, a))
                     else:
@@ -139,6 +139,7 @@ class Room:
 
         # Set sink and source
         if sim_params["SOURCE_LOCS"] == []:
+            print(sim_params["SOURCE_ROW"])
             self.grid[sim_params["SOURCE_ROW"]][sim_params["SOURCE_COL"]].source = True
             self.grid[sim_params["SOURCE_ROW"]][sim_params["SOURCE_COL"]].acr = sim_params["SOURCE_ACH"]/3600 * self.total_volume
 
@@ -188,6 +189,10 @@ class Room:
         self.moving_path = [item for sublist in self.moving_path for item in sublist]
         for rev in list(reversed(self.moving_path)):
             self.moving_path.append(rev)
+
+        if len(self.sim_params['INFECTED_AGENT_LOCS']) != 0:
+            for loc in self.sim_params['INFECTED_AGENT_LOCS']:
+                self.grid[loc[0]][loc[1]].agent.infectious = True
 
     def __str__(self):
         out = ""
