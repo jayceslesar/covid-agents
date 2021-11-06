@@ -96,11 +96,11 @@ def viz(room, name=None, screenshots='Y'):
     room.write_data(data_path)
         # pygame.quit()
 
-    if choice == 'y':
-        img, *imgs = [Image.open(f) for f in stills]
-        img.save(fp=os.path.join(path, data_path+".png"), format='PNG', append_images=imgs, save_all=True, duration=20, loop=0)
-        for im in stills:
-            os.remove(im)
+    # if choice == 'y':
+    #     img, *imgs = [Image.open(f) for f in stills]
+    #     img.save(fp=os.path.join(path, data_path+".png"), format='PNG', append_images=imgs, save_all=True, duration=20, loop=0)
+    #     for im in stills:
+    #         os.remove(im)
 
 
 def screenshot(screen, path, step):

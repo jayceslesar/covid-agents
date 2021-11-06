@@ -20,14 +20,17 @@ def get_all_coords(x, y):
             if i % 2 !=0 and j % 2 != 0:
                 continue
             coords.append((i, j))
-    combos = list(itertools.combinations_with_replacement(coords, 2))
+    combos = list(itertools.combinations(coords, 2))
     return combos
 
 
+# each simulation is a half hour
+
 def main():
     experiments = get_all_coords(6, 13)
-    print(experiments)
-    for experiment in experiments:
+    times = len(experiments)
+    for i, experiment in enumerate(experiments):
+        print(f'{i}/{times}')
         source, sink = experiment
 
         sim_params['SOURCE_ROW'] = int(source[0])
@@ -41,5 +44,4 @@ def main():
         viz(room, name=name, screenshots='N')
 
 if __name__ == '__main__':
-    print('hey')
     main()
