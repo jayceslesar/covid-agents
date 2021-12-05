@@ -50,14 +50,24 @@ def draw(room, step):
                 SCREEN.blit(fan_img, rect)
 
 
-def viz(room):
-    data_path = input("What would you like to name the data file? ")
-    choice = input('do you want screenshots?\n')
-    if choice == 'y':
-        stills = []
-        path = input("What folder do you want to save your screenshots into? Please specify the path \n")
-        skip = int(input("How many steps between screenshots? \n"))
-        os.makedirs(path, exist_ok=True)
+def viz(room, name=None, screenshots='Y'):
+    if name is None:
+        data_path = input("What would you like to name the data file? ")
+    else:
+        data_path = name
+
+    if screenshots == 'Y':
+        choice = input('do you want screenshots?\n')
+        if choice == 'y':
+            stills = []
+            path = input("What folder do you want to save your screenshots into? Please specify the path \n")
+            skip = int(input("How many steps between screenshots? \n"))
+            os.makedirs(path, exist_ok=True)
+
+    global height_per_block
+    global width_per_block
+    height_per_block = WINDOW_HEIGHT // room.num_rows
+    width_per_block = WINDOW_WIDTH // room.num_cols
 
     pygame.init()
     global SCREEN, CLOCK
@@ -75,20 +85,22 @@ def viz(room):
                 sys.exit()
 
         pygame.display.update()
-        if choice == 'y' and room.steps_taken % skip == 0:
-            screenshot(SCREEN, path, room.steps_taken)
-            stills.append(os.path.join(path, "step" + str(room.steps_taken) + ".png"))
+        if screenshots == 'Y':
+        
+            if choice == 'y' and room.steps_taken % skip == 0:
+                screenshot(SCREEN, path, room.steps_taken)
+                stills.append(os.path.join(path, "step" + str(room.steps_taken) + ".png"))
 
         steps_taken += 1
         # time.sleep(.1)
     room.write_data(data_path)
         # pygame.quit()
 
-    if choice == 'y':
-        img, *imgs = [Image.open(f) for f in stills]
-        img.save(fp=os.path.join(path, data_path+".png"), format='PNG', append_images=imgs, save_all=True, duration=20, loop=0)
-        for im in stills:
-            os.remove(im)
+    # if choice == 'y':
+    #     img, *imgs = [Image.open(f) for f in stills]
+    #     img.save(fp=os.path.join(path, data_path+".png"), format='PNG', append_images=imgs, save_all=True, duration=20, loop=0)
+    #     for im in stills:
+    #         os.remove(im)
 
 
 def screenshot(screen, path, step):
@@ -101,10 +113,10 @@ def screenshot(screen, path, step):
 BLACK = (0, 0, 0)
 WINDOW_HEIGHT = sim_params['WINDOW_HEIGHT']
 WINDOW_WIDTH = sim_params['WINDOW_WIDTH']
-room = Room.Room(sim_params)
+# room = Room.Room(sim_params)
 
-height_per_block = WINDOW_HEIGHT // room.num_rows
-width_per_block = WINDOW_WIDTH // room.num_cols
+# height_per_block = WINDOW_HEIGHT // room.num_rows
+# width_per_block = WINDOW_WIDTH // room.num_cols
 
-if __name__ == '__main__':
-    viz(room)
+# if __name__ == '__main__':
+#     viz(room)

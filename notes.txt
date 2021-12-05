@@ -1,4 +1,3 @@
-meeting link: https://uvmcom.zoom.us/j/98555620543?from=addon
 
 Wed Sept 15th:
 ---
@@ -46,3 +45,146 @@ Wed Sept 22nd:
     - define risk?? For given paramaters in sim_params.json
 
     - come up with source/sink locations drawing --> ask John
+
+Wed Oct 6th:
+---
+
+    - https://cran.r-project.org/web/packages/randomForest/randomForest.pdf document like so
+
+
+Wed October 13th:
+---
+
+    - consistency in words
+    - use zotero to get citations looking good
+    - clarify time (does changing 1 to 2 double the speed or halve it?) : done
+    - make paramters list a table --> put in example values from simulations from above, column for units (when appropriate), give examples of booleans to use : done
+    - add to introduction for program requirements (python3), using specific version : done
+    - give json example : done
+    - example under how to run section
+    - autocreate data folder :  done
+    - save last step as an image --> document and save certain steps : saves a gif already
+    - add functionality to add multiple source/sinks : needs more testing
+
+    - experiments:
+        - try to break
+
+Wed October 27th:
+---
+
+    Pattern to use : teacher, all 4 corners, middle person
+
+    What does a typical classroom look like?
+
+    - Doors acting as source/sink in same location between experiments (either closest or furthest from teacher)
+    - Windows doing the same on one side (across from the door(s))
+    - No HVAC at all --> just open windows (just sinks)
+    - Multiple people infectious and the level of infectiosness --> masking
+    - Diagonals infected
+    - Door locations and number of windows (2, 3, and 4 windows)
+    experiments:
+
+    ALL FOR x PATTERN INFECTED:
+    `"INFECTED_AGENT_LOCS": [[1, 1], [1, 9], [5, 5], [9, 1], [9, 9]]}`
+
+
+        door location in top left:
+            "SOURCE_LOCS": [[0, 0]]
+
+            2 windows on right tl_door_source_2_windows_sink
+                "SINK_LOCS": [[2, 10], [4, 10]]
+            3 windows on right tl_door_source_3_windows_sink
+                "SINK_LOCS": [[2, 10], [4, 10], [6, 10]]
+            4 windows on right tl_door_source_4_windows_sink
+                "SINK_LOCS": [[2, 10], [4, 10], [6, 10], [8, 10]]
+
+        door location in bottom left:
+            "SOURCE_LOCS": [[12, 0]]
+
+            2 windows on right bl_door_source_2_windows_sink
+                "SINK_LOCS": [[2, 10], [4, 10]]
+            3 windows on right bl_door_source_3_windows_sink
+                "SINK_LOCS": [[2, 10], [4, 10], [6, 10]]
+            4 windows on right bl_door_source_4_windows_sink
+                "SINK_LOCS": [[2, 10], [4, 10], [6, 10], [8, 10]]
+
+        door location in top left:
+            "SOURCE_LOCS": [[0, 0]]
+
+            2 windows on right tl_door_source_2_windows_source
+                "SOURCE_LOCS": [[0, 0], [2, 10], [4, 10]]
+            3 windows on right tl_door_source_3_windows_source
+                "SOURCE_LOCS": [[0, 0], [2, 10], [4, 10], [6, 10]]
+            4 windows on right tl_door_source_4_windows_source
+                "SOURCE_LOCS": [[0, 0], [2, 10], [4, 10], [6, 10], [8, 10]]
+
+        door location in bottom left:
+            "SOURCE_LOCS": [[12, 0]]
+
+            2 windows on right bl_door_source_2_windows_source
+                "SOURCE_LOCS": [[12, 0], [2, 10], [4, 10]]
+            3 windows on right bl_door_source_3_windows_source
+                "SOURCE_LOCS": [[12, 0], [2, 10], [4, 10], [6, 10]]
+            4 windows on right bl_door_source_4_windows_source
+                "SOURCE_LOCS": [[12, 0], [2, 10], [4, 10], [6, 10], [8, 10]]
+
+        door location in top left:
+            2 windows on right tl_door_sink_2_windows_sink
+            3 windows on right tl_door_sink_3_windows_sink
+            4 windows on right tl_door_sink_4_windows_sink
+
+        door location in bottom left:
+            2 windows on right bl_door_sink_2_windows_sink
+            3 windows on right bl_door_sink_3_windows_sink
+            4 windows on right bl_door_sink_4_windows_sink
+
+        door location in top left:
+            2 windows on right tl_door_sink_2_windows_source
+            3 windows on right tl_door_sink_3_windows_source
+            4 windows on right tl_door_sink_4_windows_source
+
+        door location in bottom left:
+            2 windows on right bl_door_sink_2_windows_source
+            3 windows on right bl_door_sink_3_windows_source
+            4 windows on right bl_door_sink_4_windows_source
+
+        1 door on bottom left: bl_door_sink
+        1 door on bottom left: bl_door_source
+
+        1 door on top left: tl_door_sink
+        1 door on top left: tl_door_source
+
+        sink and source clos to teacher (on same space) both_close
+
+        sink and source far from teacher (on same space) both_far
+
+
+
+    More Broad Questions:
+
+    - Bivariate comparisons --> less risk to class if windows are sink vs source
+                            --> of windows, windows are sink..how does risk change on amount same for source
+                            --> students more at risk of teacher is infectious vs student
+                            --> locations with least total inhalation of infected aerosols
+
+    - Comparing --> either one student over time who is never infectious over experiments
+                --> boxplot where each boxplot is from a different but related simulation and the values are aerosols inhaled
+
+    - later...optimization --> what is the optimal locations for source and sinks given we can only have one of each
+
+
+    REAL EXPERIMENTS:
+
+        1/6 possible people infected (top right, bottom right, top left, bottom left, middle, teacher)
+
+        door in either top left or bottom left acting as sink/source
+
+            2, 3, 4 windows on opposite side of door acting as the opposite of source and sink
+
+        boxplot where each boxplot is the AUC of all non-infected people
+
+
+    Optimization:
+        For a given room...
+            All combinations of one source and one sink where there isnt an agent
+            1 infected person top left 1 in bottom right
